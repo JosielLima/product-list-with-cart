@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'RedHat';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/src/assets/fonts/static/RedHatText-Regular.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'RedHat';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/src/assets/fonts/static/RedHatText-Bold.ttf) format('truetype');
+  }
+
+  @font-face {
+    font-family: 'RedHat';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/src/assets/fonts/static/RedHatText-SemiBold.ttf) format('truetype');
+  }
+  html {
+    font-family: "RedHat", system-ui, sans-serif;
+  }
+  body {
+    font-size: 16px;
+  }
+}
