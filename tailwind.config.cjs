@@ -32,6 +32,35 @@ module.exports = {
     fontFamily: {
       'sans': ['"RedHat"', ...defaultTheme.fontFamily.sans],
     },
+    fontSize: {
+      '14': '14px',
+      '16': '16px',
+      '24': '24px',
+      '56': '56px',
+    },
+    lineHeight: {
+      '120': '120%',
+      '125': '125%',
+      '150': '150%',
+    },
+    letterSpacing: {
+      'none': '0px',
+    },
+    fontWeight: {
+      'regular': '400',
+      'semibold': '600',
+      'bold': '700',
+    },
+    spacing: {
+      '50': '4px',
+      '100': '8px',
+      '150': '12px',
+      '200': '16px',
+      '300': '24px',
+      '400': '32px',
+      '500': '40px',
+      '1100': '88px',
+    },
     },
   },
   plugins: [],
