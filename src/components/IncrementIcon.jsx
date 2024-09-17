@@ -1,4 +1,3 @@
-import React from 'react'
 import IncrementSVG from '../assets/images/icon-increment-quantity.svg?react'
 
 const IncrementIcon = () => {
