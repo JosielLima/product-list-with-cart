@@ -16,7 +16,7 @@ export const App = () => (
         </PageWithHeader>
       }
     >
-        <div className="h-full bg-indigo-50 p-4 lg:p-24">
+        <div className="h-full bg-rose-50 p-4 lg:py-24 lg:px-24">
           <Router/>
         </div>
     </Suspense>
