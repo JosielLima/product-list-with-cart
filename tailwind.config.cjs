@@ -16,8 +16,8 @@ module.exports = {
         '2xl': '1440px',
       },
       colors: {
-        'red': {
-          '500': 'hsl(14, 86%, 42%)'
+        'brand': {
+          'primary': 'hsl(14, 86%, 42%)'
         },
           'rose': {
             '900': 'hsl(14, 65%, 9%)',

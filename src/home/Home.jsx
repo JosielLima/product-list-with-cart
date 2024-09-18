@@ -1,31 +1,24 @@
 import CartProvider from '../context/CartContext';
-import IncrementIcon from "../components/IncrementIcon";
-import DecrementIcon from "../components/DecrementIcon";
-import AddToCard from "../components/AddToCard";
-import Button from "../components/Button";
-import RemoveItem from "../components/RemoveItem";
-import Typography from "../components/Typography";
+import Product from '../general/Product';
+import data from '../api/data.json';
+import Typography from '../components/Typography';
 
 export const Home = () => (
-    <div className="flex w-full flex-col">
-      <CartProvider>
-      <Typography variant="preset-1">Desserts</Typography>
-      <IncrementIcon/><DecrementIcon/><AddToCard />
-      <Button placeholder={"Add to card"} onClick={()=>(console.log("clicked"))} />
-      <RemoveItem />
-      <div className="mt-10 flex flex-col items-center justify-center">
-        <Typography variant="preset-3">
-          <span className="text-red-500">
-            <span className="text-red-500">
-              {" "}
-              <span className="text-red-500">
-                You have no items in your cart
-              </span>
-            </span>
-          </span>
-        </Typography>
+  <div className="flex w-full flex-col">
+    <CartProvider>
+      <div className="grid grid-cols-[3fr_1fr] gap-5">
+        <div>
+          <Typography variant="preset-1">Desserts</Typography>
+          <section className="grid grid-cols-3 gap-6">
+            {data.map((product) => (
+              <Product key={product.name} product={product} />
+            ))}
+          </section>
+        </div>
+        <aside>
+          <div>Carrinho</div>
+        </aside>
       </div>
-      </CartProvider>
-    </div>
-
+    </CartProvider>
+  </div>
 );

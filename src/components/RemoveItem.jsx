@@ -1,4 +1,3 @@
-import React from 'react'
 import RemoveSVG from '../assets/images/icon-remove-item.svg?react'
 
 
