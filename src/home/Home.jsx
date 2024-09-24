@@ -2,6 +2,7 @@ import CartProvider from '../context/CartContext';
 import Product from '../general/Product';
 import data from '../api/data.json';
 import Typography from '../components/Typography';
+import Cart from '../components/Cart';
 
 export const Home = () => (
   <div className="flex w-full flex-col">
@@ -16,7 +17,7 @@ export const Home = () => (
           </section>
         </div>
         <aside>
-          <div>Carrinho</div>
+          <Cart />
         </aside>
       </div>
     </CartProvider>

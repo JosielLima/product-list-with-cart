@@ -8,7 +8,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/public/assets/fonts/static/RedHatText-Regular.ttf) format('truetype');
+    src: url(/assets/fonts/static/RedHatText-Regular.ttf) format('truetype');
   }
 
   @font-face {
@@ -16,7 +16,7 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url(/public/assets/fonts/static/RedHatText-Bold.ttf) format('truetype');
+    src: url(/assets/fonts/static/RedHatText-Bold.ttf) format('truetype');
   }
 
   @font-face {
@@ -24,10 +24,10 @@
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: url(/public/assets/fonts/static/RedHatText-SemiBold.ttf) format('truetype');
+    src: url(/assets/fonts/static/RedHatText-SemiBold.ttf) format('truetype');
   }
   html {
-    font-family: "RedHat", system-ui, sans-serif;
+    font-family: 'RedHat', system-ui, sans-serif;
   }
   body {
     font-size: 16px;
