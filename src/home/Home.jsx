@@ -7,10 +7,10 @@ import Cart from '../components/Cart';
 export const Home = () => (
   <div className="flex w-full flex-col">
     <CartProvider>
-      <div className="grid grid-cols-[3fr_1fr] gap-5">
+      <div className="grid lg:grid-cols-[3fr_1fr] gap-5 md:grid-cols-[1fr]">
         <div>
           <Typography variant="preset-1">Desserts</Typography>
-          <section className="grid grid-cols-3 gap-6">
+          <section className="grid xs:grid-cols-1 md:grid-cols-3 gap-6">
             {data.map((product) => (
               <Product key={product.name} product={product} />
             ))}

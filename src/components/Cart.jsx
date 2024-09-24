@@ -3,7 +3,7 @@ import EmptyCartSVG from '../assets/images/illustration-empty-cart.svg?react';
 
 const Cart = () => {
   return (
-    <div className="max-w-sm p-6 bg-white rounded-md flex flex-col gap-6">
+    <div className="w-full p-6 bg-white rounded-md flex flex-col gap-6">
       <Typography variant="preset-2" className="text-brand-primary">
         Your Cart (0)
       </Typography>
