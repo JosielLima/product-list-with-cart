@@ -1,4 +1,4 @@
-import CartProvider from '../context/CartContext';
+import { CartProvider } from '../context/CartContext';
 import Product from '../general/Product';
 import data from '../api/data.json';
 import Typography from '../components/Typography';
