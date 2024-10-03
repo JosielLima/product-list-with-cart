@@ -2,6 +2,7 @@ import Typography from '../components/Typography';
 import RemoveItem from '../components/RemoveItem';
 import Button from '../components/Button';
 import EmptyCartSVG from '../assets/images/illustration-empty-cart.svg?react';
+import CarbonTreeSVG from '../assets/images/icon-carbon-neutral.svg?react';
 import { useCart } from '../hooks/useCart';
 
 const Cart = () => {
@@ -47,9 +48,10 @@ const Cart = () => {
           <div className="flex flex-col gap-4">
             <div className="flex justify-between items-center gap-2 border-b border-rose-100 pb-4">
               <Typography variant="preset-4">Order Total</Typography>
-              <Typography variant="preset-2">{getTotalPrice()}</Typography>
+              <Typography variant="preset-2">${getTotalPrice().toFixed(2)}</Typography>
             </div>
             <div className="flex gap-1 py-3 justify-center bg-rose-50 rounded-md">
+              <CarbonTreeSVG />
               <Typography variant="preset-4">This is a </Typography>
               <Typography variant="preset-4-bold">carbon-neutral</Typography>
               <Typography variant="preset-4">delivery</Typography>

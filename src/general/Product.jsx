@@ -19,7 +19,7 @@ const Product = ({ product }) => {
       <Typography variant="preset-4">{product.category}</Typography>
       <Typography variant="preset-3">{product.name}</Typography>
       <Typography variant="preset-3" className="text-brand-primary">
-        $ {product.price}
+        $ {product.price.toFixed(2)}
       </Typography>
     </div>
   );
