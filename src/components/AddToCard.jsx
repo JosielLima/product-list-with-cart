@@ -18,7 +18,7 @@ const AddToCard = ({ product }) => {
           Add to card
         </button>
       ) : (
-        <div className="flex gap-2 bg-rose-500 rounded-md">
+        <div className="py-3 px-6 w-[160px] inline-flex flex rounded-full text-rose-900 bg-red-500 text-white justify-between">
           <DecrementIcon onClick={() => removeFromCart(product.name)} />
           {quantity}
           <IncrementIcon onClick={() => addToCart(product)} />
