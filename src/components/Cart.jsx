@@ -2,11 +2,23 @@ import Typography from '../components/Typography';
 import RemoveItem from '../components/RemoveItem';
 import Button from '../components/Button';
 import EmptyCartSVG from '../assets/images/illustration-empty-cart.svg?react';
+import OrderConfirmedSVG from '../assets/images/icon-order-confirmed.svg?react';
 import CarbonTreeSVG from '../assets/images/icon-carbon-neutral.svg?react';
 import { useCart } from '../hooks/useCart';
+import { useState } from 'react';
+import Modal from '../components/Modal';
 
 const Cart = () => {
-  const { items = [], removeFromCart, getTotalPrice } = useCart() ?? {};
+  const { items = [], removeFromCart, getTotalPrice, resetCart } = useCart() ?? {};
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleConfirmOrder = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="w-full p-6 bg-white rounded-md flex flex-col gap-6">
@@ -25,10 +37,10 @@ const Cart = () => {
                   {item.quantity} x
                 </Typography>
                 <Typography variant="preset-4" className="text-rose-500">
-                  ${item.price}
+                  ${item.price.toFixed(2)}
                 </Typography>
                 <Typography variant="preset-4-bold" className="text-rose-500">
-                  ${item.totalPrice}
+                  ${item.totalPrice.toFixed(2)}
                 </Typography>
               </div>
             </div>
@@ -57,9 +69,49 @@ const Cart = () => {
               <Typography variant="preset-4">delivery</Typography>
             </div>
             <div>
-              <Button placeholder={'Confirm Order'} />
+              <Button placeholder={'Confirm Order'} onClick={handleConfirmOrder} />
             </div>
           </div>
+          <Modal isOpen={isModalOpen} onClose={handleCloseModal} resetCart={resetCart}>
+            <div>
+              <div className="pb-4">
+                <OrderConfirmedSVG />
+              </div>
+              <Typography variant="preset-2">Order Confirmed!</Typography>
+              <Typography variant="preset-4" className="text-rose-500">
+                We hope you enjoy your food!
+              </Typography>
+            </div>
+            <div className=" bg-rose-50 rounded-md">
+              {items.length > 0 &&
+                items.map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex justify-between items-center p-4 my-4 gap-2 border-b border-rose-100 pb-4"
+                  >
+                    <div>
+                      <Typography variant="preset-4-bold">{item.name}</Typography>
+
+                      <div className="flex gap-2 items-center">
+                        <Typography variant="preset-4-bold" className="text-brand-primary">
+                          {item.quantity} x
+                        </Typography>
+                        <Typography variant="preset-3" className="text-rose-900">
+                          ${item.price.toFixed(2)}
+                        </Typography>
+                      </div>
+                    </div>
+                    <Typography variant="preset-4-bold" className="text-rose-500">
+                      ${item.totalPrice.toFixed(2)}
+                    </Typography>
+                  </div>
+                ))}
+              <div className="p-4 flex justify-between items-center gap-2 border-b border-rose-100 pb-4">
+                <Typography variant="preset-4">Order Total</Typography>
+                <Typography variant="preset-2">${getTotalPrice().toFixed(2)}</Typography>
+              </div>
+            </div>
+          </Modal>
         </>
       )}
     </div>
