@@ -1,4 +1,4 @@
-# Project Name
+# Product-list-with-cart
 
 Created for the Front-end Mentors course as a practice exercise involving Tailwind CSS, React, and Vite.
 
