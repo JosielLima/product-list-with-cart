@@ -78,7 +78,7 @@ const Cart = () => {
                 <div className="pb-4">
                   <OrderConfirmedSVG />
                 </div>
-                <Typography variant="preset-2">Order Confirmed!</Typography>
+                <Typography variant="preset-1">Order Confirmed!</Typography>
                 <Typography variant="preset-4" className="text-rose-500">
                   We hope you enjoy your food!
                 </Typography>
@@ -90,16 +90,19 @@ const Cart = () => {
                       key={item.id}
                       className="flex justify-between items-center p-4 my-4 gap-2 border-b border-rose-100 pb-4"
                     >
-                      <div>
-                        <Typography variant="preset-4-bold">{item.name}</Typography>
+                      <div className="flex gap-4">
+                        <img src={item.image.desktop} alt={item.name} className="object-cover w-12 h-12 rounded-md" />
+                        <div>
+                          <Typography variant="preset-4-bold">{item.name}</Typography>
 
-                        <div className="flex gap-2 items-center">
-                          <Typography variant="preset-4-bold" className="text-brand-primary">
-                            {item.quantity} x
-                          </Typography>
-                          <Typography variant="preset-3" className="text-rose-900">
-                            ${item.price.toFixed(2)}
-                          </Typography>
+                          <div className="flex gap-2 items-center">
+                            <Typography variant="preset-4-bold" className="text-brand-primary">
+                              {item.quantity} x
+                            </Typography>
+                            <Typography variant="preset-3" className="text-rose-900">
+                              ${item.price.toFixed(2)}
+                            </Typography>
+                          </div>
                         </div>
                       </div>
                       <Typography variant="preset-4-bold" className="text-rose-500">

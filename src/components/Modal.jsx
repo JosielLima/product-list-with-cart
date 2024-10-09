@@ -22,10 +22,10 @@ const Modal = ({ isOpen, onClose, children, resetCart }) => {
 
   return (
     <div
-      className="fixed bg-black bg-opacity-50 flex items-center justify-center md:inset-0 xs:bottom-0 xs:inset-x-0 "
+      className="fixed flex items-center justify-center inset-0 bg-black bg-opacity-50 z-50"
       onClick={handleBackgroundClick}
     >
-      <div className="flex flex-col justify-between bg-white p-6 rounded-lg shadow-lg lg:w-[592px] md:w-[94vh] xs:w-[100vh] xs:h-[calc(100vh-72px)] md:h-[calc(100vh-200px)]">
+      <div className="xs:absolute xs:inset-x-0 xs:bottom-0 md:relative flex flex-col justify-between bg-white p-6 rounded-lg shadow-lg lg:w-[592px] md:w-[94vh] xs:w-[100%] xs:h-[calc(100%-72px)] md:w-[calc(100vh-200px)]">
         <div className="overflow-y-auto">{children}</div>
         <Button placeholder={'Start New Order'} onClick={startNewOrder} />
       </div>
